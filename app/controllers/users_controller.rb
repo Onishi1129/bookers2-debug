@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: [:home, :about]
   before_action :ensure_correct_user, only: [:edit, :update]
 
   def show
